@@ -1,0 +1,1034 @@
+%\documentclass[PhD,two side]{srmuthesis}
+%\documentclass[MS]{srmuthesis}
+%\documentclass[MTech]{srmuthesis}
+\documentclass[BTech]{srmuthesis}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{times}
+\usepackage{t1enc}
+\usepackage{tikz}
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage{setspace} 
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{lscape}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{hyperref} % hyperlinks for references.
+\usepackage{amsmath} % easier math formulae, align, subequations \ldots
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{titlesec}
+\usepackage{textcomp}
+\usepackage{pifont}
+\usepackage{appendix} 
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes,arrows,shadows,patterns}
+\usepackage[printonlyused]{acronym}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{4cm}}
+\graphicspath{ {images/} }
+\lstset{
+basicstyle=\scriptsize\sffamily\color{black},
+frame=single,
+numbers=left,
+numbersep=5pt,
+numberstyle=\tiny\color{gray},
+showspaces=false,
+breaklines=true,
+showstringspaces=false,
+tabsize=1
+}
+\lstdefinelanguage{Kotlin}{
+keywords={package, as, typealias, this, super, val, var, fun, for, null, true, false, is, in, throw, return, break, continue, object, if, try, else, while, do, when, yield, typeof, yield, typeof, class, interface, enum, object, override, public, private, get, set, import, abstract, },
+keywordstyle=\color{NavyBlue}\bfseries,
+ndkeywords={@Deprecated, Iterable, Int, Integer, Float, Double, String, Runnable, dynamic},
+ndkeywordstyle=\color{BurntOrange}\bfseries,
+emph={println, return@, forEach,},
+emphstyle={\color{OrangeRed}},
+identifierstyle=\color{black},
+sensitive=true,
+commentstyle=\color{gray}\ttfamily,
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+stringstyle=\color{PineGreen}\bfseries\ttfamily,
+morestring=[b]",
+morestring=[s]{"""*}{*"""},
+}
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\lstdefinelanguage{XML}
+{
+basicstyle=\scriptsize\sffamily,
+	morestring=[s]{"}{"},
+	morecomment=[s]{?}{?},
+	morecomment=[s]{!--}{--},
+	commentstyle=\color{darkgreen},
+	moredelim=[s][\color{black}]{>}{<},
+	moredelim=[s][\color{red}]{\ }{=},
+	stringstyle=\color{blue},
+	identifierstyle=\color{maroon},
+		morekeywords={
+		android:background,
+		android:clickable,
+		android:contentDescription,
+		android:iconifiedByDefault,
+		android:id,
+		android:layout_alignParentBottom,
+		android:layout_alignParentRight,
+		android:layout_height,
+		android:layout_marginBottom,
+		android:layout_marginLeft,
+		android:layout_marginRight,
+		android:layout_weight,
+		android:layout_width,
+		android:listSelector,
+		android:orientation,
+		android:paddingLeft,
+		android:scaleType,
+		android:src,
+		android:text,
+		android:textAppearance,
+		android:textSize,
+		android:textStyle,
+		tools:context,
+		xmlns:android,
+		xmlns:tools,
+	}
+}
+
+
+
+%\usepackage{nomencl}
+%\newcommand{\bigsize}{\fontsize{16pt}{20pt}\selectfont}
+%\renewcommand\nomname{\centerline {NOTATION}}
+%\makenomenclature
+\setcounter{MaxMatrixCols}{20}
+\captionsetup[figure]{labelfont=bf}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page
+
+\title{An android application for different levels of college management} % Enter The Project Title
+
+\firstauthor{ Vijay Krishna V }% Enter The Student name
+\firstauthorregno{[Reg No: RA1511003020329]}
+\secondauthor{ Chirag G Samtani }% Enter The Student name
+\secondauthorregno{[Reg No: RA1511003020375]}
+\thirdauthor{ Srushti Bompelli } % If there is no third author, leave the space blank like \thirdauthor{}
+\thirdauthorregno{[Reg No: RA1511003020344]}
+\fourthauthor{ Chaitanya Bachhav }
+\fourthauthorregno{[Reg No: RA1511003020383]}
+\guide{ Mr M. Prabu } % Enter your guide's name
+\designation{ Asst. Professor } % Enter your guide's designation
+\guidedepartment{Computer Science \& Engineering} % Enter the department name of your Guide 
+\hod{Dr. JAGADEESAN,M.Tech.,Ph.D} % Enter HOD's name
+\department{Computer Science \& Engineering} % Enter your department name
+\date{OCT 2017} % Enter month and year of submission
+%\nocite{*}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace*{3in}
+%\begin{center}
+%{\Huge Dedicated to my Parents}
+%\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Certificate
+\certificate
+
+%\vspace*{0.5in}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+
+\abstract
+\begin{doublespacing}
+\large\noindent Technical and scientific development has become one of the most essential changes in every aspect of the modern
+day to make our work efficient and easier. The proposed
+Android application has been designed to efficiently process the
+management system of an institution at their different levels
+of hierarchy, to reduce the physical work and confusion. Black
+board is an application specifically for the faculty members and
+the head of departments. The application will show required
+content based on who is signing into the app. For instance, if
+the dean logs into the app, he/she can view the details of all the
+heads and their staff according to their departments, a HOD will
+be able to see the details and availability of the faculty members
+of their own department. The application will be able to display
+most of the academic information like the timetables, availability
+of the faculty, location of the classrooms etc. The database of the application can be modified and updated through a web portal
+by a specific admin. Many future enhancements can be made to
+the mobile application based on the institutions requirements.\\
+\end{doublespacing}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements
+\acknowledgements
+I would like to express my deepest gratitude to my guide, Mr. M. Prabu
+his valuable guidance, consistent encouragement, personal caring, timely help and providing me with an excellent atmosphere for doing research. All through the work, in spite of his busy schedule, he has extended cheerful and cordial support to me for completing this project.\\
+
+
+
+\begin{flushright}
+{\bf Author}
+\end{flushright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents etc.
+
+\begin{singlespace}
+\tableofcontents
+\thispagestyle{empty}
+
+\listoftables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoffigures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\end{singlespace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abbreviations
+%\begin{acronym}[longest acronym must be entered here]
+\begin{acronym}[OKID/ERA]
+
+%\acro{acronym}{in detail}
+\acro{ABC}{Artificial Bee Colony}
+\acro{ACO}{Ant Colony Optimization}
+\acro{BA}{Bees Algorithm}
+\acro{BFO}{Bacterial Foraging Optimization}
+\acro{BM} {Bending Moment}
+\acro{CMIR}{Condensed Model Identification and Recovery}
+\acro{CMTM}{Consistent Mass Transfer Matrix}
+\acro{CPU}{Central Processing Unit}
+\acro{CS}{Cuckoo Search}
+\acro{CSI}{Complete Structural Identification}
+\acro{DAQ}{Data Acquisition}
+\acro{DOF}{Degrees Of Freedom}
+\acro{DTM}{Damped Transfer Matrix}
+\acro{EA}{Evolutionary Algorithm}
+\acro{EKF}{Extended Kalman Filter}
+\acro{ERA}{Eigen system Realization Algorithm}
+\acro{FE}{Finite Element}
+\acro{FRF}{Frequency Response Function}
+\acro{GA}{Genetic Algorithm}
+\acro{LCTM}{Lumped Crack Transfer Matrix}
+\acro{LM}{Levenberg-Marquardt}
+\acro{LMTM}{Lumped Mass Transfer Matrix}
+\acro{LS}{Least Square}
+\acro{MAE}{Mean Absolute Error}
+\acro{MSE}{Mean Square Error}
+\acro{MSI}{Modular Smart Interface}
+\acro{OKID/ERA}{Observer Kalman Filter Identification/Eigen Realization Algorithm}
+\acro{PSO}{ Particle Swarm Optimization}
+\acro{SA}{Simulated Annealing}
+\acro{SCTM}{Single Crack Transfer Matrix}
+\acro{SF} {Shear Force}
+\acro{SHM}{Structural Health Monitoring}
+\acro{SI}{Structural Identification}
+\acro{SS}{Sub-Structure}
+\acro{SSI}{Sub-Structural Identification}
+\acro{TCTM}{Two Crack Transfer Matrix}
+\acro{TM}{Transfer Matrix}
+\end{acronym}
+% Use the syntax \ac{acronym} whereever you use this acronym.
+% Abbreviations
+
+%\noindent 
+%\begin{tabbing}
+%xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
+%\textbf{TM}   \> Transfer Matrix \\
+%\textbf{LMTM} \> Lumped Mass Transfer matrix \\
+%\textbf{CMTM} \> Consistent Mass Transfer matrix \\
+%\textbf{SCTM} \> Single Crack Transfer matrix \\
+%\textbf{LCTM} \> Lumped Crack Transfer matrix \\
+%\textbf{DCTM} \> Double Crack Transfer matrix \\
+%\textbf{DOF} \> Degrees Of Freedom \\
+%\textbf{GA} \> Genetic Algorithm  \\
+%\textbf{PSO} \> Particle Swarm Optimization \\
+%\textbf{SI} \> Structural Identification \\
+%\end{tabbing}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enter the symbols used in the thesis in alphabatical order
+\chapter*{\centerline{LIST OF SYMBOLS}}
+\addcontentsline{toc}{chapter}{LIST OF SYMBOLS}
+%\nomenclature{b}{Width of the beam}
+%\nomenclature{r}{Number of DOF}
+%\nomenclature{n}{Number of elements}
+%\nomenclature{h}{Thickness of the beam}
+%\nomenclature{$\theta$}{Length of the beam}
+%\nomenclature{$\omega$}{Circular frequency}
+\begin{doublespace}
+\begin{tabbing}
+%\printnomenclature
+xxxxxxxxxxx \= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \kill
+\textbf{$\alpha$, $\beta$}   \> Damping constants  \\
+\textbf{$\theta$}   \> Angle of twist, rad  \\
+\textbf{$\omega$}   \> Angular velocity, rad/s  \\
+\textbf{$b$}   \> Width of the beam,  m \\
+\textbf{$h$}   \> Height of the beam,  m \\
+\textbf{$\{f(t)\}$}   \> force vector  \\
+\textbf{$[K^e]$}  \> Element stiffness matrix\\
+\textbf{$[M^e]$}  \> Element mass matrix \\
+\textbf{$\{q(t)\}$}   \> Displacement vector  \\
+\textbf{$\{\dot{q}(t)\}$}   \> Velocity vector  \\
+\textbf{$\{\ddot{q}(t)\}$}   \> Acceleration vector  \\
+
+
+\end{tabbing}
+\end{doublespace}
+
+\pagebreak
+\clearpage
+% The main text will follow from this point so set the page numbering
+% to arabic from here on.
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction.
+
+%Enter your chapter number here
+\chapter{Introduction}
+\section{Overview}
+The project is designed for the effective management of a college or an institution
+according to their different levels of hierarchy present. In today's world it is very
+important to work efficiently to avoid any confusion and for productive results. In the
+administration of a college or an institution there exists various levels of hierarchy, the
+responsibilities and functions differ at each level, in the existing system most of the work
+done is paper work and it is manually carried out, this may lead to confusion and increase
+of work load at each level. With increasing technology and tools in each and every aspect
+of the world, it has become much easier and efficient to carry out any task. Our project
+intends to give technical development to this particular field of college management. The
+proposed android application will be able to store and retrieve the academic data and can
+be accessed accordingly by the different levels of the management structure depending
+upon their necessities and functionalities.
+
+The project consists of an android application with a web portal and a common
+database connecting them. The android application will have separate logins for the dean,
+HOD, class in charge, faculty etc. once they login they will able to access the information required by them. For instance, if the dean logs into the app, he/she can view the details of all the heads and their staff according to their departments, a HOD will be able to see the details and availability of the faculty members of their own department and other information about their department. The main objective of the application is that all the academic information should be available at one place in an organized manner which can be easily accessible by just a click. The application helps in making tedious tasks like searching for classrooms or staff easier. The application also provides the facility to make calls to the required person from the app. Features like checking the availability of free staff helps in the effective management of time without free periods being wasted. The data in the application is stored in the database which will be updated from time to time. The application will be very user friendly to avoid any complications and it can be used by all the management members.
+
+A web portal will be designed to update the database from time to time every year or every semester depending upon the college. It is easier to update the information than through the application itself. The web portal will consist of a login page through which the admin can login and update the information; the admin can be any faculty member with a secure login ID and password. The login details of the admin will be checked carefully and secure access will be given. Once the admin logs into the web portal he will be given access to update the all the information like changed time tables, details of the new students, change of classes etc. the website can be designed according to the convenience of the college, it will be user friendly with advanced features for the convenience of the user. The android application and the web portal are connected using a common database. The database contains all the information which is retrieved by the app and updated using the web portal. The data is stored in the database using a private cloud the information can only be accessed through secure login.
+
+The scope and implementation of the project can be increased and developed with changing requirements. The project is designed and implemented using the latest and updated technologies for more efficiency and ease of access.
+\section{Problem Statement}
+Organized data is easier to work with than manual paper work, The problem in the existing system is that most of the work done by the management is paper work, there is no scope of organized data, each person have to maintain different files to access all the academic information. The main drawbacks of the existing college management system are:
+\begin{itemize}
+\item Manual work for all the teachers regarding attendance, updating and changing the attendance is difficult.
+\item No way of knowing which teacher is free during which period.
+\item No provision for rectification of mistakes.
+\item Dean doesn't have access to everyone's contacts in one place.
+\item Locating classes is not an easy task.
+\item Contacting a higher official is difficult.
+\end{itemize}
+These drawbacks will be addressed by the project, the android application will facilitate the availability of all the information together, attendance can be updated through the app by the faculty whenever required; there will always be a way to rectify mistakes. The project will be implemented to address all the drawbacks of the existing system and improvise the effectiveness of the system.
+\section{Objective}
+The main objective of the proposed system is to introduce and implement technical advancement in the existing system of college management. The proposed the android application will be able to make the work easier by providing ease of access to the data required. Some of the main objectives of the project will be avoiding manual work for attendance, separate logins for different hierarchy of management, easier access to academic information, all information related to the particular person available in one application, effective management of time tables and free time, each level of management can access information relevant only to them (and not all information) through a secure login which keeps the data secured and avoids any misuse of data, increases overall efficiency of management. The web portal is used update the data in the database, one of the main objective of the web portal is to be user friendly to facilitate the admin to update the details with ease and the updated information should be secure which will be provide through secure login of the admin.
+\section{Organization of the report}
+There are five chapters in the report of the project android application for different levels of college management. The domain of the project is a common database connecting the android application and web portal. The report gives a comprehensible overview of the design and implementation details of the project, it helps understand the various technologies used in the project and the effective implementation of these technologies.
+ 
+\subsection*{Chapter 1}
+This chapter gives the basic introduction of the project, it gives the basic overview of the entire project and gives the details about the problem statement and the main objective of the project.
+
+\subsection*{Chapter 2}
+This chapter includes the literature survey which is a survey done on various base papers, it mainly gives the problems and conclusions for the domain of the project. The chapter also gives the description about  all the features of the existing system and its drawbacks and the proposed system and its advantages.
+
+\subsection*{Chapter 3}
+This chapter gives the requirements of the project in detail. It includes the basic purpose of the project, its scope, user requirements of the project. Software and Hardware specifications required by the project are given in detail in this chapter.
+
+\subsection*{Chapter 4}
+This chapter the complete information about the system design and the various modules present in the project. The chapter gives the system architecture and its description , it gives the detailed description about the data flow diagram. The module implementation is given in detail with the screen shots from the projects and the diagrams required. Data flow diagram and the process description for each module is separately given for better understanding.
+
+\subsection*{Chapter 5}
+This chapter deals with entire implementation of the system. The information about the platform of the project is given, the sample coding and the screen shots of the working model with proper description is given this chapter. The project will be done and the summary will be given.
+
+\subsection*{Chapter 6}
+The conclusion of the project will be given in this chapter. The project also gives an insight
+about the future work which can be implemented through the project.
+\chapter{Specifications}
+\section{Introduction}
+In this chapter, the specifications of this project are going to be discussed in detail. Topics like purpose, project scope and much more is also included.
+\subsection{Purpose}
+Teachers should do exactly what the name suggests, teach. The current education system does not allow them to do just that. Unfortunately, as the teachers have no other choice, they follow the system. Doing all the manual work of attendance and calculation of marks and all that itself takes up half their time. Valuable time that could have been spent on imparting knowledge to the students. This is where comes the purpose of our project. To decrease manual work for the teachers in colleges so that they can concentrate on imparting their knowledge to students.
+\subsection{Project Scope}
+The scope of this project is huge. We plan to first implement this only in our college but as soon as that happens, we plan to approach various colleges where this problem of manual work persists and implement it there. After colleges, we can move on to schools and other institutions. The scope is endless.  
+\section{Overall Description}
+In overall description we're going to discuss about how the project is implemented. Description of what was done, the features, the user characteristics, operating environment, implementation constraints and much more.
+\subsection{Product Features}
+The various feature in our application and web interface will include the following:
+\begin{itemize}
+\item Separate logins for different hierarchy of management.
+\item Easier access to academic information.
+\item All information related to the particular person available in one application.
+\item Effective management of timetables.
+\item Each level of management can access information relevant only to them (and not all information).
+\item Increases overall efficiency of management.
+\item Locations of classes in the campus can be found in the application.
+\item Academic information of all the students can be found under the separate class teacher's login.
+\item The dean can access the contact information of every teacher on the campus.
+\item The dean can call any teacher he wishes to from the application itself.
+\item The HOD of each department can view the performance of students of his/ her department.
+\item Free periods of teachers can be seen through the application which will help in allocating them to classes where teachers are absent.
+\end{itemize}
+\subsection{User classes and characteristics}
+The various user classes and their characteristics are given below:
+
+\subsubsection{Login}
+The login class takes the login information from the user and authenticates it. If the information matches with that of the database, it directs it to another page based on whether the user is a teacher, dean or a HOD of a department.                          
+\subsubsection{Menu}
+The menu is where the user can select what functionality he/she wants to use. The various menu items include:
+\begin{itemize}
+\item Class time tables
+\item Teacher time tables
+\item Available Staff
+\item Class Location
+\end{itemize}
+
+\subsubsection{Class Time Tables}
+This is where the user can select the particular class he/she wants the time table to and can view the time table of the same in the application itself.
+\subsubsection{Available Staff}
+This is where the senior staff can view the free periods of the teachers so that he/she can assign the teacher another class in case there is a class without a teacher at that point.
+\subsubsection{Class Location}
+This is where the user can enter the class he/she wants to go to and the result will be the location of the class in the campus. We later plan to add a student login where this feature will also be available.
+\subsubsection{Call Staff}
+This is where the dean will be able to browse through all the teachers and HODs and will be able to call any one of them from the application itself.
+\subsubsection{Teacher Time Tables}
+This is where the HOD can select the teacher from his/her department and view the time table of the same in the application itself.
+\subsection{Operating environment}
+The Android SDK includes a virtual mobile device emulator that runs on your computer. The
+emulator lets you prototype, develop and test Android applications without using a physical
+device. The Android Emulator simulates a device and displays it on your development computer.
+It lets you prototype, develop, and test Android apps without using a hardware device. You can
+launch an app on the emulator when you run your project, or you can drag an APK file onto the
+emulator to install it. As with a hardware device, after you install an app on a virtual device, it
+remains until you uninstall or replace it. If needed, you can test how multiple apps, such as your
+own or system apps, work with each other. You interact with the emulator just as you would with
+a hardware device, but using your mouse and keyboard, and emulator buttons and controls. The
+emulator supports virtual hardware buttons and touchscreens, including two-finger operations, as
+well as directional pads (D-pads), trackballs, wheels, and various sensors. You can dynamically
+resize the emulator window as needed, zoom in and out, change the orientation, and even take a
+screenshot.
+
+When your app is running on the emulator, it can use the services of the Android platform to
+invoke other apps, access the network, play audio and video, accept audio input, store and
+retrieve data, notify the user, and render graphical transitions and themes. The emulator has
+controls that let you easily send incoming phone calls and text messages, specify the location of
+the device, simulate fingerprint scans, specify network speed and status, and simulate battery
+properties. The emulator can simulate an SD card and internal data storage; you can drag a file,
+such as a graphics or data file, onto the emulator to store it.
+\subsection{Design and Implementation Constraints, Assumptions and dependencies}
+The one dependency that this project has is that the data has to be fed into the web portal every semester and this responsibility has to be taken up by one individual.
+
+\paragraph{Material Design} is a design language developed by Google. Material design is a comprehensive guide for visual, motion, and interaction design across platforms and devices. A single underlying system that allows for a unified experience across platforms and device sizes.
+\section{External Interface Requirements}
+In this part, we're going to discuss about the external interface requirements like the user interface, hardware and software interface:
+\subsection{User Interface}
+We've used xml for making the user interface of the android application. And HTML, CSS for the user interface of the web portal. This is a very important part of the project as without a proper UI, the user wouldn't be able to navigate through the application properly and in the end, that is of no use.
+\subsection{Hardware Interface}
+There is no physical database where all the data is stored, it's all stored in the cloud. The other physical component required will be the smartphone itself which every user will undoubtedly have.
+\subsection{Software Interface}
+The various components of the software interface are given below:
+\subsubsection{Login Interface}
+The login class takes the login information from the user and authenticates it. If the information matches with that of the database, it directs it to another page based on whether the user is a teacher, dean or a HOD of a department.                          
+\subsubsection{Menu Interface}
+The menu is where the user can select what functionality he/she wants to use. The various menu items include:
+\begin{itemize}
+\item Class time tables
+\item Teacher time tables
+\item Available Staff
+\item Class Location
+\end{itemize}
+
+\subsubsection{Class Time Tables Interface}
+This is where the user can select the particular class he/she wants the time table to and can view the time table of the same in the application itself.
+\subsubsection{Available Staff Interface}
+This is where the senior staff can view the free periods of the teachers so that he/she can assign the teacher another class in case there is a class without a teacher at that point.
+\subsubsection{Class Location Interface}
+This is where the user can enter the class he/she wants to go to and the result will be the location of the class in the campus. We later plan to add a student login where this feature will also be available.
+\subsubsection{Call Staff Interface}
+This is where the dean will be able to browse through all the teachers and HODs and will be able to call any one of them from the application itself.
+\subsubsection{Teacher Time Tables Interface}
+This is where the HOD can select the teacher from his/her department and view the time table of the same in the application itself.
+\subsection{Communication Interface}
+There are three levels of communications happening at a given moment in the app's lifecycle. They are mentioned below:
+\begin{itemize}
+\item Web-portal to database
+\item Database to web-portal
+\item Application to database
+\end{itemize}
+Note that the web-portal and the application do not communicate at all. The data is fed through the web portal and is stored in the database which is then accessed by the application to display it to the users. 
+\section{Other non-functional Requirements}
+In this section, we're going to discuss about the other non-functional requirements like performance and security requirements. 
+\subsection{Performance Requirements}
+Other than a smartphone and an internet connection, nothing will be required to run this application with the highest performance.
+\subsection{Security Requirement}
+The app automatically encrypts the password of the user and hence the passwords are kept safe. In case the user forgets his/ her password, extra steps will be taken to make sure that the user is identified first. And hence, security is taken care of.
+\chapter{System Implementation}
+\section{Overview of the Platform}
+\subsection{Java}
+The Java language is a key pillar in Android, an open source mobile operating system. Although Android, built on the Linux kernel, is written largely in C, the Android SDK uses the Java language as the basis for Android applications.
+
+Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. 
+\subsection{Kotlin}
+Kotlin is a Concise, Simple,Safe and Statically typed programming language focused on Interoperability with Java. 
+
+One can Avoid entire classes of errors such as null pointer exceptions. Improves code readability as it Drastically reduces the amount of boilerplate code. While the syntax is not compatible with Java, Kotlin is reliant on Java code from the existing Java Class Library, such as the collections framework. 
+Kotlin is a fully supported programming language on Android.
+\subsection{Django(Web Framework)}
+Django is a free and open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern.
+
+Django's primary goal is to ease the creation of complex, database-driven websites. Django emphasizes reusability and "pluggability" of components, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.
+\subsection{Git}
+Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.
+\subsection{RESTful API}
+Representational state transfer (REST) or RESTful web services is a way of providing interoperability between computer systems on the Internet. REST-compliant Web services allow requesting systems to access and manipulate textual representations of Web resources using a uniform and predefined set of stateless operations.
+
+An API for a website is code that allows two software programs to communicate with each another.A RESTful API explicitly takes advantage of HTTP methodologies. They use GET to retrieve a resource; PUT to change the state of or update a resource, which can be an object, file or block; POST to create that resource; and DELETE to remove it.
+\subsection{JSON}
+JavaScript Object Notation or JSON is an open-standard file format that uses human-readable text to transmit data objects consisting of attribute-value pairs and array data types (or any other serializable value). It is a very common data format used for asynchronous browser-server communication.
+
+JSON is built on two structures:
+A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+\subsection{Android}
+Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets.
+
+Android's user interface is mainly based on direct manipulation, using touch gestures that loosely correspond to real-world actions, such as swiping, tapping and pinching, to manipulate on-screen objects, along with a virtual keyboard for text input. 
+\subsection{Android Studio}
+The Official IDE for Android. Android Studio provides the fastest tools for building apps on every type of Android device.
+
+World-class code editing, debugging, performance tooling, a flexible build system, and an instant build/deploy system all allow you to focus on building unique and high quality apps.
+\subsection{SQLite}
+SQLite is an in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. The code for SQLite is in the public domain and is thus free for use for any purpose, commercial or private.
+
+SQLite is an embedded SQL database engine. Unlike most other SQL databases, SQLite does not have a separate server process.SQLite is a compact library. With all features enabled, the library size can be less than 500KiB. SQLite a popular database engine choice on memory constrained gadgets such as cellphones, PDAs, and MP3 players. Performance is usually quite good even in low-memory environments.
+
+\subsection{Open Source Libraries for Android}
+\paragraph{Glide}
+Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+\paragraph{Retrofit}
+A type-safe HTTP client for Android and Java.
+This library provides a powerful framework for authenticating and interacting with APIs and sending network requests with OkHttp network.
+This library makes downloading JSON or XML data from a web API fairly straightforward. Once the data is downloaded then it is parsed into a Plain Old Java Object (POJO).
+\paragraph{Stetho}
+Stetho is a sophisticated debug bridge for Android applications developed by facebook. When enabled, developers have access to the Chrome Developer Tools feature natively part of the Chrome desktop browser.
+Network inspection is possible with the full spectrum of Chrome Developer Tools features, including image preview, JSON response helpers.
+SQLite databases can be visualized and interactively explored with full read/write capabilities.
+\paragraph{ProGuard}
+ProGuard is the most popular optimizer for Java bytecode. It makes your Java and Android applications up to 90\% smaller and up to 20\% faster. ProGuard also provides minimal protection against reverse engineering by obfuscating the names of classes, fields and methods.
+\section{Implementation Details}
+
+\subsection{Simulation Parameters}
+The Android SDK includes a virtual mobile device emulator that runs on your computer. The emulator lets you prototype, develop and test Android applications without using a physical device.
+\subsubsection{Unit Testing}
+This is the first level of testing. In this different modules are tested against the specifications produced during the design of the module. During this testing the number of the arguments is compared to input parameters, matching of parameter and arguments etc. All five modules are checked separately, each test case is given to each unit and it is checked. The result is checked to see if the actual outcome is same as the expected outcome.A unit test is also called a module test because it tests the individual units of code that comprise the application. Each test validates a single module that was built to perform a certain task with the expectation that it will behave in a specific way. During this testing the number of the arguments is compared to input parameters, matching of parameter and arguments etc. All five modules are checked separately, each test case is given to each unit and it is checked. The result is checked to see if the actual outcome is same as the expected outcome.A unit test is also called a module test because it tests the individual units of code that comprise the application. Each test validates a single module that was built to perform a certain task with the expectation that it will behave in a specific way.
+\subsubsection{Integration testing}
+Integration testing is a process where all the separate modules are combined together
+and its working is checked. There are two approaches to this : bottom-up and top-down
+integration.At first the branch, semester and grade selection modules are integrated and checked.Top-down approach is being used in this software testing.
+\subsubsection{User acceptance testing}
+User acceptance of a system is the factor for the success of any system. The system
+under consideration is tested for the user acceptance by constantly keeping in touch
+with the prospective system user at the time of developing wherever required.
+\begin{itemize}
+\item Input screen design.
+\item Output screen design.
+\item Online message to guide the user.
+\item Format of the reports and other outputs
+\end{itemize}
+\subsubsection{Functional Testing}
+Functional testing ensures that the application is working as per the requirements. Most of the test conducted for this is driven by the user interface and call flow
+\subsubsection{Performance Testing}
+This testing process is undertaken to check the performance and behavior of the application under certain conditions such as low battery, bad network coverage, low available memory, simultaneous access to application’s server by several users and other conditions. Performance of an application can be affected from two sides:application’s server side and client’s side. Performance testing is carried out to check both.
+\subsubsection{Memory Leakage Testing}
+Memory leakage happens when a computer program or application is unable to manage the memory it is allocated resulting in poor performance of the application and the overall slowdown of the system. As mobile devices have significant constraints of available memory, memory leakage testing is crucial for the proper functioning of an application
+\subsubsection{Interrupt Testing}
+ An application while functioning may face several interruptions like incoming calls or network coverage outage and recovery. The different types of interruptions are:
+\begin{itemize}
+\item Incoming and Outgoing SMS and MMS
+\item Incoming and Outgoing calls
+\item Incoming Notifications
+\item Battery Removal
+\item Cable Insertion and Removal for data transfer
+\item Network outage and recovery
+\item Media Player on/off
+\end{itemize}
+An application should be able to handle these interruptions by going into a suspended state and resuming afterwards.
+\subsubsection{Usability testing}
+Usability testing is carried out to verify if the application is achieving its goals and getting a favorable response from users. This is important as the usability of an application is its key to commercial success (it is nothing but user friendliness).Another important part of usability testing is to make sure that the user experience is uniform across all devices.This section of testing hopes to address the key challenges of the variety of mobile devices and the diversity in mobile platforms/OS, which is also called device fragmentation. One key portion of this type of usability testing is to be sure that there are no major errors in the functionality, placement, or sizing of the user interface on different devices.
+\subsubsection{Installation testing}
+Certain mobile applications come pre-installed on the device whereas others have to be installed from the store. Installation testing verifies that the installation process goes smoothly without the user having to face any difficulty. This testing process covers installation, updating and uninstalling of an application
+\subsubsection{Security Testing}
+Security Testing: To check for vulnerabilities to hacking, authentication and authorization policies, data security, session management and other security standards.
+\subsubsection{Results}
+\begin{table}[htbp]
+	\centering
+\begin{tabular}{|L|L|L|c|}
+
+	\hline
+	Testing Parameters & Expected Output  & Actual Output &Result\\
+	\hline
+		\hline
+	Authentication & Authenticate user by validating credentials from api & User is Authenticated &Pass\\
+		\hline
+	Fetch Faculty Timetable & Fetch faculty time-table from the API & Time-table fetched and stored locally &Pass\\
+		\hline
+	Fetch Class Timetable & Fetch class time-table from the API & Time-table fetched and stored locally &Pass\\
+		\hline
+	Fetch Class Location &  Fetch class location from the API & class location displayed & Pass\\
+		\hline
+	Check Faculty Availability & fetch available faculty from the database & displayed available faculty &Pass\\
+		\hline
+	Admin Portal Authentication & Authenticate Admin &Credentials Validated &Pass\\
+		\hline
+	Admin Portal-Update/modify Database   & Changes should reflect in the app & Data Changed &Pass\\
+	\hline
+\end{tabular}
+\caption{Test-Cases}
+\label{tab:test-cases}
+  \end{table}
+\begin{table}[htbp]
+	\centering
+\begin{tabular}{|c|L|c|}
+	\hline
+	Name of Test & API Level & Test Result\\
+	\hline
+		\hline
+	Unit testing & Lollipop , Nougat & Pass\\
+		\hline
+	Integration testing & Lollipop , Nougat & Pass\\
+		\hline
+	User Acceptance testing & Lollipop , Nougat & Pass\\
+		\hline
+	Functional testing & Lollipop , Nougat & Pass\\
+		\hline
+	Usability testing & KitKat , Nougat & Pass \\
+		\hline
+	Memory Leakage testing & Marshmellow , Nougat & Pass\\
+		\hline
+	Performance testing   & KitKat , Nougat & Pass\\
+		\hline
+	Interrupt testing & Marshmellow , Nougat & Pass\\
+		\hline
+	Installation tests & Lollipop , Nougat & Pass\\
+		\hline
+	Security Testing & Lollipop , Nougat & Pass\\
+	
+	\hline
+\end{tabular}
+\caption{Test-Results}
+\label{tab:test-results}
+\end{table}
+
+\subsection{Sample coding}
+\begin{lstlisting}[language=Kotlin,caption={Retrofit Interface}, label={lst:retrofit}]
+package com.notadeveloper.app.blackboard
+
+import com.facebook.stetho.okhttp3.StethoInterceptor
+import io.reactivex.Observable
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
+
+interface RetrofitInterface {
+@FormUrlEncoded
+@POST("login")
+fun authUser(@Field("user") user: String, @Field("pass") pass: String): Observable<Faculty>
+
+@FormUrlEncoded
+@POST("getfacultytimetable")
+fun getfacultytimetable(@Field("user") user: String, @Field("pass") pass: String, @Field("id") id: String): Observable<timetable>
+
+@FormUrlEncoded
+@POST("getclasstimetable")
+fun getclasstimetable(@Field("user") user: String, @Field("pass") pass: String, @Field("class") class: String): Observable<timetable>
+
+@FormUrlEncoded
+@POST("getavailablestaff")
+fun getavailablestaff(@Field("user") user: String, @Field("pass") pass: String, @Field("day") day: String, @Field("hour") hour: String): Observable<List<String>>
+
+companion object Factory {
+fun create(): RetrofitInterface {
+val retrofit = Retrofit.Builder()
+.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+.addConverterFactory(MoshiConverterFactory.create().asLenient())
+.client(OkHttpClient.Builder().addNetworkInterceptor(StethoInterceptor()).build())
+.baseUrl("http://blackboard.xyz/")
+.build()
+}
+}
+}
+\end{lstlisting}
+\begin{lstlisting}[language=XML,caption={Faculty Dashboard}, label={lst:faculty-dashboard}]
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+tools:context="com.example.lenovo.bb.HodActivity">
+
+<Button
+android:text="Available staff"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/button"
+android:theme="@style/button"
+android:id="@+id/button2" />
+
+<Button
+android:text="class location"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/button2"
+android:theme="@style/button"
+android:id="@+id/button3"
+/>
+
+<Button
+android:text="class time table"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/button4"
+android:layout_below="@+id/imageView2"
+android:theme="@style/button"
+android:layout_centerHorizontal="true"
+/>
+
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/blckbrdcover"
+android:id="@+id/imageView2"
+android:adjustViewBounds="true"
+android:scaleType="fitXY"
+android:layout_alignParentTop="true"
+android:layout_alignParentLeft="true"
+/>
+
+<Button
+android:text="Staff time table and responsibilities"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:id="@+id/button"
+android:theme="@style/button"
+android:layout_below="@+id/button4"
+android:layout_alignParentLeft="true"
+android:layout_alignParentStart="true" />
+</RelativeLayout>
+\end{lstlisting}
+\subsection{Screen Shots}
+\subsubsection{Faculty Login (fig\ref{fig:faculty-login})}
+Every faculty whomsoever install the
+application will have to provide its email-id, password and
+phone number during its one time registration process. These
+informations are first matched with the online database and then
+stored in mobile database.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{login}
+	\caption{Faculty Login}
+	\label{fig:faculty-login}
+\end{figure}
+\subsubsection{Faculty Dashboard (fig\ref{fig:faculty-dashboard})}
+All information related to the particular person
+available in one application. Faculty can check his/her timetable, class location, class timetable with the click of a button.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{facultydashboard}
+\caption{Faculty Dashboard}
+\label{fig:faculty-dashboard}
+\end{figure} 
+\subsubsection{Check available faculty (fig\ref{fig:available-faculty})}
+Hod can easily check the available faculty by selecting the day and hour.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{checkavailability}
+\caption{Check Available Faculty}
+\label{fig:available-faculty}
+\end{figure} 
+\subsubsection{Faculty Timetable (fig\ref{fig:faculty-timetable})}
+The Hod can check the timetable of a particular faculty by querying the database.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{facultytimetable}
+\caption{Faculty Timetable}
+\label{fig:faculty-timetable}
+\end{figure}
+\subsubsection{Check Class Timetable (fig\ref{fig:class-timetable})}
+The faculty can check the timetable of a particular class by selecting the year, section of the class.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{classtimetable}
+\caption{Class Timetable}
+\label{fig:class-timetable}
+\end{figure} 
+\subsubsection{Class Location (fig\ref{fig:class-location})}
+The faculty can check the location of a particular class by selecting the dept, year, section of the class
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{classlocation}
+\caption{Class Location}
+\label{fig:class-location}
+\end{figure} 	
+\subsubsection{Admin Login (fig\ref{fig:django-login})}
+Login page for the Webportal where admin can login to change data.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{djangologin}
+	\caption{BlackBoard Admin Login}
+	\label{fig:django-login}
+\end{figure} 
+\subsubsection{Admin Dashboard (fig\ref{fig:django-dash})}
+Dashboard for the admin Webportal where database can be modified/updated/added/deleted.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{djangomanage}
+	\caption{BlackBoard Admin Dashboard}
+	\label{fig:django-dash}
+\end{figure}
+\section{Summary}
+The mobile application, incorporating the college
+management system, is a very effective tool
+which can be used for improving the overall efficiency in a college/university.During these tests, the number of arguments are compared to input parameters, matching of parameters and arguments etc.
+
+The Application was tested on an emulator which lets you prototype, develop and test Android applications without using a physical device. The application performed extremely well in low resource environments where the storage space and network connection is slow. Memory leaks were detected and resolved during development using Leak Canary, Proguard has been used to optimize the code(remove unused resources) and also to obfuscate the core logic for security.
+
+
+\chapter{INTRODUCTION}
+\label{chap:intro}
+\section{Inverse Problem}
+\ac{SI} is typically an inverse process whereby structural parameters such as stiffness, damping properties are identified from input excitation and output responses.
+
+
+Generally, Engineering problems can be classified into forward and inverse problems \citep{ssikoh}. In forward problems, the system output responses are calculated from the known system properties and input responses as shown in Figure \ref{fig:fp} whereas in inverse problems, the system parameters are identified based on the input and output responses of the system which is shown in Figure \ref{fig:ip}. 
+\begin{figure}[htpb]
+\centering
+\tikzstyle{block} = [rectangle, line width=0.75pt,draw,  text width=20mm, text centered,  minimum height=10mm]
+\tikzstyle{line} = [draw, line width=0.75pt, -latex']
+\begin{tikzpicture}
+\node [block,text width=30mm] (input) {\bf\footnotesize Input Excitation};
+\node [block,right of=input,text width=35mm,node distance = 45mm] (nummode) {\bf \footnotesize Numerical model};
+\node [block, above of=nummode,text width=35mm,node distance = 20mm] (para) {\bf \footnotesize System Parameters (Mass, Stiffness and Damping co-efficient)};
+\node [block,right of=nummode,text width=35mm,node distance = 45mm] (output) {\bf \footnotesize Output Responses (Acceleration, Velocity and Displacement)};
+% Draw edges
+\path [line] (input) -- (nummode);
+\path [line] (para) -- (nummode);
+\path [line] (nummode) -- (output);
+\end{tikzpicture}
+\caption{Forward problem}
+\label{fig:fp}
+\end{figure}
+\begin{figure}[htpb]
+\centering
+\tikzstyle{block} = [rectangle, line width=0.75pt,draw,  text width=20mm, text centered,  minimum height=10mm]
+\tikzstyle{line} = [draw, line width=0.75pt, -latex']
+\begin{tikzpicture}
+\node [block,text width=30mm] (input) {\bf\footnotesize Input Excitation};
+\node [block,right of=input,text width=35mm,node distance = 45mm] (nummode) {\bf \footnotesize Numerical model};
+\node [block, right of=nummode,text width=35mm,node distance = 45mm] (para) {\bf \footnotesize System Parameters (Mass, Stiffness and Damping co-efficient)};
+\node [block,above of=nummode,text width=35mm,node distance = 20mm] (output) {\bf \footnotesize Output Responses (Acceleration, Velocity and Displacement)};
+% Draw edges
+\path [line] (input) -- (nummode);
+\path [line] (output) -- (nummode);
+\path [line] (nummode) -- (para);
+\end{tikzpicture}
+\caption{Inverse problem}
+\label{fig:ip}
+\end{figure}
+For a structure, the input excitation is a periodic force and the output responses are displacement, velocity and acceleration. The input force can be measured using force transducer and the output responses can be measured respectively using vibration pick-ups, velometer and accelerometer. Some \ac{SI} algorithms require measurement of all responses or any one of the output responses. Since the input and output responses are measurable for a structure with unknown parameters, the \ac{SI} problem is an inverse problem which identifies structural or damage parameters.\\ \vspace{-5mm}
+\subsection{Sub sections} 
+Sub-sections must be numbered as shown in this text. 
+\subsubsection{Sub-sub sections}
+Sub-sections of sub section are not to be numbered and it should be in bold as shown in this text. 
+\chapter{LITERATURE SURVEY}
+\section{Frequency Domain SI}
+\citet{george} showed that the magnitude of change in natural frequencies is a function of the severity and of the location of deterioration in structures. The modal analysis has been carried out on a welded steel frame and a wire rope with damage. \citet{gredia} proposed a direct method for determining six flexural stiffnesses of a thin anisotropic plate. In this method, natural frequencies \citep{Leo} and mode shapes have been processed using \ac{LS} technique.
+\section{Particle Swarm Optimization}
+A basic variant of the \ac{PSO} \citep{kenndy} algorithm works by having a population (called a swarm) of candidate solutions (called particles). These particles are moved around in the search-space according to a few simple formulae. The movements of the particles are guided by their own best known position in the search-space as well as the entire swarm's best known position. When improved positions are being discovered these will then come to guide the movements of the swarm. The process is repeated and by doing so it is hoped, but not guaranteed, that a satisfactory solution will eventually be discovered.
+\chapter{System Analysis}
+All the symbols used in the text must be listed out in the list of symbols page in alphabetic order, and explained with units. Equations must be written with central alignment and numbered with section number . equation number. 
+\begin{equation}
+[M^e]\{\ddot{q}(t)\}+[C^e]\{\dot{q}(t)\}+[K^e]\{q(t)\}=\{f(t)\}
+\label{eq:mkceqn}
+\end{equation}  
+the element stiffness matrix is
+\begin{equation}
+[K^e]=\frac{EI}{l_e^3}\begin{bmatrix}
+12&6l_e &-12&6l_e\\
+6l_e&4l_e^2&-6l_e&2l_e^2\\
+-12&-6l_e&12&-6l_e\\
+6l_e&2l_e^2&-6l_e&4l_e^2
+\end{bmatrix}
+\label{eq:sm}
+\end{equation}
+and the element consistent mass matrix is
+\begin{equation}
+[M^e]=\frac{\rho Al_e}{420}\begin{pmatrix}
+156&22l_e &54&-13l_e\\
+22l_e&4l_e^2&13l_e&-3l_e^2\\
+54&13l_e&156&-22l_e\\
+-13l_e&-3l_e^2&-22l_e&4l_e^2
+\end{pmatrix}
+\label{eq:cmm}
+\end{equation}
+\begin{equation}
+[C]=\alpha[M]+\beta[K]
+\end{equation}
+A matrix equation with square matrices and vectors,
+\begin{equation}
+\begin{Bmatrix}
+-M_1(t)\\
+-V_1(t)\\
+M_2(t)\\
+V_2(t)\end{Bmatrix}=\begin{bmatrix}
+D_{11}&D_{12}&D_{13}&D_{14}\\
+D_{21}&D_{22}&D_{23}&D_{24}\\
+D_{31}&D_{32}&D_{33}&D_{34}\\
+D_{41}&D_{42}&D_{43}&D_{44}\end{bmatrix}\begin{Bmatrix}
+v_1(t)\\
+\theta_1(t)\\
+v_2(t)\\
+\theta_2(t)\end{Bmatrix}
+\label{eq:D}
+\end{equation}
+\chapter{System Design}
+\section{Tables and Figures} 
+By the word Table, is meant tabulated numerical data in the body of the project report as well as in the appendices. All other non-verbal materials used in the body of the project work and appendices such as charts, graphs, maps, photographs and diagrams may be designated as figures\footnote{type footnote here}.
+The format for tables  is given below. The table must referred in the text as Table. (\ref{tab:frmcl}). The title of the table with table number should be written at the top of the table with center aligned as shown below.\footnote{An example footnote.}.
+\begin{table}[htpb]
+\centering
+\caption{Error in identified parameters}
+\begin{tabular}{|c|c|c|c|c|c|}
+     	\hline
+     	\multicolumn{2}{|c|}{Exact parameter} &               \multicolumn{4}{c|}{Identified crack location (\% of error)}               \\ \cline{3-6}
+     	\multicolumn{2}{|c|}{}                & \multicolumn{2}{c|}{Complete measurement} & \multicolumn{2}{|c|}{Incomplete measurement} \\ \hline
+     	Depth($\xi$) &  Location($\lambda$)   &  Noise free   &         5\% Noise         &  Noise free   &          5\% Noise           \\ \hline
+0.067     &          0.5           & 0.501(0.2\%)  &       0.503(0.6\%)        & 0.501(0.2\%)  &        0.496(-0.8\%)         \\
+0.50     &          0.5           & 0.498(-0.4\%) &       0.506(1.2\%)        & 0.498(-0.4\%) &         0.508(1.6\%)         \\ \hline
+\end{tabular}
+\label{tab:frmcl}
+\end{table}\\
+
+Figures must be drawn at the appropriate places and must be referred in the same page in the text. Figures should be referred in the text as Figure \ref{fig:beam}. 
+\begin{figure}[htpb]
+\centering
+\includegraphics[scale=0.5]{beam_engine.pdf}
+\caption{\bf Beam engine}
+\label{fig:beam}
+\end{figure}
+Title of figures must be center aligned and should be displayed at the bottom of the figure as shown. \\
+
+\begin{figure}[htpb]
+\centering
+\subfigure[Elliptical trammel]{
+\includegraphics[scale=0.75]{ellipse.jpg}
+\label{fig:ellipse}} \hspace{10mm}
+\subfigure[Scotch Yoke]{
+\includegraphics[scale=0.75]{scotch.jpg}
+\label{fig:scotch}}
+\caption{\bf Inversions of double slider crank chain}
+\label{fig:4s}
+\end{figure}
+Multiple figures with same caption can be arranged as shown in Figure \ref{fig:4s} and they are referred in text such as Figure \ref{fig:ellipse} and Figure \ref{fig:scotch}. The graphs should be drawn at appropriate places with center alignment and it should be referred in text. \\
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[scale=0.85]
+\begin{axis}[
+xlabel=Mode,
+ylabel= Error (\%), tick label style={font=\small}, xtick={1,2,3,4},legend style={font=\footnotesize,at={(0,0)},anchor=south west}]
+\addplot[smooth,line width=0.5pt,mark=*,color=red] 
+plot coordinates {
+(1,-0.939212)
+(2,-3.130594064)
+(3,-5.044603033)
+(4,-7.033277189)
+};
+\addplot[smooth, line width=0.5pt,mark=triangle,color=blue]
+plot coordinates {
+    (1,0.46960605)
+    (2,1.648557512)
+    (3,2.640499554)
+    (4,3.334547275)
+};
+\addplot[smooth,line width=1pt,mark=square, color=green]
+    plot coordinates {
+        (1,0)
+        (2,0.012489072)
+        (3,0.102586976)
+        (4,0.369493634)
+    };
+\legend{TPLMTM\\SPLMTM\\CMTM\\}
+\end{axis}
+\end{tikzpicture}
+\caption{\bf Error in natural frequencies}
+\label{fig:natfrq}
+\end{figure}
+\chapter{Coding, Testing}
+In this chapter, the program coding related to your work using MATLAB\texttrademark or C can be presented here. Numbered list can be typeset in LaTex as follows.
+\begin{enumerate}
+\item  \textbf{Online LaTex editors} Such as \textbf{Share LaTex}, \textbf{Write LaTex}, \textbf{Papeeria} 
+are also available which do not require any installation. \vspace{5mm}
+\item  Documents can be typeset or edited in the online LaTex and output file can be down loaded.\vspace{5mm}
+\item  The LaTex template can generally be down loaded from the University/publisher's/ conference website. (.tex file) \vspace{5mm}
+\item Type the document in the respective template and run the program like C or MATLAB. \vspace{5mm}
+\item  The output document is formatted as .pdf or .ps and saved in the same file name and same folder. \vspace{5mm}
+\item  Some Standard LaTex templates are \textit{IEEE}, \underline{ASCE}, \textsf{ASME}, Elsevier etc. \vspace{5mm}
+\end{enumerate}
+Bullet points are generated in LaTex as follows:
+\begin{itemize}
+\item [\ding{92}] Requires installation of two packages.
+\item [\ding{92}]\textbf{MiKTeX} is a distribution of the typesetting system.
+\item [\ding{92}] MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language. 
+\item [\ding{92}] \textbf{TeXstudio} is a cross-platform open source LaTeX editor with an interface. 
+\item [\ding{92}] Some other cross-platforms are Texmaker, Technic center, Winedt etc.,
+\item [\ding{92}] Install MiKTex first and TeXstudio at last.
+\end{itemize}
+\chapter{Conclusion}
+The Entire Project Document should have a \textbf{maximum of 80 Pages} (from cover to cover).\\
+The Project Document along with Application Software should be submitted in a Soft Copy (CD )\\
+\underline{\textbf{N.B.: Number of Copies to be submitted:}}
+Guide - 1 hard copy, Department Library -1 hard copy \&
+Each Candidate -1 hard copy and Soft Copy (in CD)- 2 copies
+\chapter{Future Enhancement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices.
+
+\appendix
+\chapter{VECTOR ALGEBRA}
+\section{Product of Two Vectors}
+\label{app:vp}
+The product of two vectors are may be a scalar product or vector product. The scalar product of two vectors is also called as dot product. It is defined as $\vec{a} . \vec{b}=|\vec{a}||\vec{b}|cos\theta$ where $\theta$ is the angle between the two vectors $\vec{a}$ and $\vec{b}$\\
+
+the cross product or vector product is a binary operation on two vectors in three-dimensional space and is denoted by the symbol $\times$. The cross product $\vec{a}\times\vec{b}$ of two linearly independent vectors $\vec{a}$ and $\vec{b}$ is a vector that is perpendicular to both and therefore normal to the plane containing them. 
+\chapter{MATRIX ALGEBRA}
+\section{Matrix Multiplication}
+Matrix multiplication is a binary operation that takes a pair of matrices, and produces another matrix. Numbers such as the real or complex numbers can be multiplied according to elementary arithmetic. On the other hand, matrices are arrays of numbers, so there is no unique way to define multiplication of matrices. As such, in general the term ``matrix multiplication'' refers to a number of different ways to multiply matrices. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography.
+
+\begin{singlespace}
+\bibliography{thesis_refer} % Enter your .bib file name here
+\end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
