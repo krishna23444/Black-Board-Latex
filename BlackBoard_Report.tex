@@ -355,6 +355,90 @@ This chapter deals with entire implementation of the system. The information abo
 \subsection*{Chapter 6}
 The conclusion of the project will be given in this chapter. The project also gives an insight
 about the future work which can be implemented through the project.
+\chapter{Literature Survey}
+\section{Introduction}
+\section{Existing System}
+%TODO Autocite References Using BibLaTex
+As mentioned in the paper 'Web Based Faculty Information Management System' by
+S.R.Bharamagoudar, Geeta R.B., S.G.Totad (International Journal of Advanced Research in
+Computer and Communication Engineering Vol. 2, Issue 6, June 2013) provides the system
+using the web based technology, but it require the high speed internet connection which is a
+further disadvantage of it. Instead of using the application provides the stand alone
+environment so that can be easy to use on the slow internet connection also.. It can be easily
+modified using the administration portal. If any requirement of the students or feedback can
+also be taken using the application by individual student. It will also be easy for the teachers to
+maintain their routine and make best use of the time which will help in advancement of
+curriculum. The teaching plan is maintained and can be reported to the HOD of the
+department. The app basically provides the platform for the teachers so that they can have
+ease of their work as well as reducing the paper work will help to save the environment. This
+application stated also provides standalone application platform to provide the various notices for the faculties.
+
+Furthermore the paper 'Faculty Management System' by Shendkar Akshay, Lahor Ankit,
+Kendre Anjali (International Journal of Advance Research and Innovative Ideas in
+Education Volume-2, Issue-2, 2016). The idea of the application is to allow the management
+to interact and communicate with the faculty with ease. This can be done by means of using the internet connectivity for each and every staff-member. Thus the application can help the
+faculty to manage and maintain the record digitally. All information fetched from the database server and maintained by administrator. The application has a section for login of Faculty. When the faculty logs in to the smartphone application then data fetches from the database and on faculty interface, similarly when admin logs in the portal he/she can edit the data.
+
+Another such paper 'JIIT-Edu: An Android Application for College Faculty', by Upanya Singh,
+Nadini Srivastava (Contemporary Computing (IC3), 2016 Ninth International Conference)  
+aimed at minimizing the time consumption in tasks like taking attendance, pushing papers from
+one level to another. The automated college management system was developed to increase
+the productivity and technical growth of educational systems. The android app automates
+certain tasks which when done manually take up a lot of time and energy. The app implements
+Bluetooth and android technology for the making non-academic tasks paper-less and fast. The
+app also improves student teacher interaction and communication via chat rooms. The app will
+store profiles of every faculty member who can login through the interface. The app
+implements Bluetooth to ensure each student is using their individual tag so as to prevent
+proxies. The app also provides a platform for sharing study material. The user can download the material posted by other users.
+
+Each of the above mentioned papers present systems which enable fast and paper-less
+administration. These systems also provide a brilliant interface between user and data and
+enable communication between users. These systems were developed with the aim of reducing manual work and enabling faster execution of necessary but non-academic activities. This project exhibits similar attributes and can be considered as a better and more reliable system as it overcomes the flaws present in the above systems as mentioned in the following pages.
+\section{Issues in Existing System}
+Now-a- days faculty deals with the papers and all the management regarding issue of making and
+maintaining the all documents and records related the students and their daily conductance. It helps to
+make sure that paper work is reduced to an efficient management model using the remote mobile
+application.
+
+\subsection{Web Based Faculty Information Management System}
+The above system provides faculty information through a web application. There is no provision
+of an interface for faculty through which they can login. Also this system consists of a
+standalone website with no mobility at all. The site is not responsive which makes it
+inaccessible for mobile devices like i-pad, smartphones, etc. Also there are no security
+measures to ensure data privacy. The system doesn't implement login modules which kind of
+makes it redundant and irregular since there is no separation between independent modules as
+all the info is accessible to everyone due absence of abstraction.
+\subsection{Faculty Management System}
+This system consists of an android application which implements digital record maintenance.
+The data-base is accessible through the app but making any changes to the stored data is
+tedious as it involves editing the source-code of the application. This makes it difficult to edit
+the database and thus the effectiveness of the system is in question. Also maintenance of the
+data becomes tedious as admin user interface is not efficient. The system has unique login
+credentials for every user but all the data present in the database is visible to everyone, some
+part of this data may be irrelevant for certain users.
+\subsection{JIIT- Edu: An Android App for college faculty}
+Above system proposes an android application which provides a platform for faculty to share
+study material, communicate and interact with other users through chat groups. The users can
+upload and download documents through the chat groups, but there is no admin portal to
+manage the application. There is no provision for handling direct access to database as the app
+lacks implementation of hierarchical management.
+\section{Summary of Literature Survey}
+\subsection{Proposed system}
+\subsubsection{Black-Board App}
+This project consists of a web-portal and an android app for maintaining and accessing data. The web-
+portal provides is an API for managing the database, this portal can be accessed by the admin only
+thereby ensuring data security. The admin privileges allow him/her to edit the data quite efficiently. The
+data-entry can be commenced when an authorized login attempt is made to the admin app. The API is
+built using Django which is one the best frameworks that are available. The app will have login interface
+through which the users can access data relevant to their tasks i.e. useless information will not be
+visible, which is made possible by abstraction. Not all users can access every data, the access will be
+restricted if the user does not login with proper credentials required. This will ensure data-security. The
+HOD can view daily-schedules of every faculty who teaches in his/her department along with their
+contact details. Dean login will allow access to details of all HOD’s and other relevant data. Once the app
+makes a request the portal verifies the authentication details and sends data accordingly. The portal
+interface allows for smooth transmission of data from data-base to the application. This overcomes the
+problems mentioned in paper A \& paper B. Also the restricted access ensures privacy and is safer than
+the system mentioned in paper C.
 \chapter{Specifications}
 \section{Introduction}
 In this chapter, the specifications of this project are going to be discussed in detail. Topics like purpose, project scope and much more is also included.
