@@ -31,7 +31,7 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{array}
 \newcolumntype{L}{>{\centering\arraybackslash}m{4cm}}
-\graphicspath{ {images/} }
+\graphicspath{ {content/} }
 \lstset{
 basicstyle=\scriptsize\sffamily\color{black},
 frame=single,
@@ -915,40 +915,9 @@ v_2(t)\\
 \section{Tables and Figures} 
 By the word Table, is meant tabulated numerical data in the body of the project report as well as in the appendices. All other non-verbal materials used in the body of the project work and appendices such as charts, graphs, maps, photographs and diagrams may be designated as figures\footnote{type footnote here}.
 The format for tables  is given below. The table must referred in the text as Table. (\ref{tab:frmcl}). The title of the table with table number should be written at the top of the table with center aligned as shown below.\footnote{An example footnote.}.
-\begin{table}[htpb]
-\centering
-\caption{Error in identified parameters}
-\begin{tabular}{|c|c|c|c|c|c|}
-     	\hline
-     	\multicolumn{2}{|c|}{Exact parameter} &               \multicolumn{4}{c|}{Identified crack location (\% of error)}               \\ \cline{3-6}
-     	\multicolumn{2}{|c|}{}                & \multicolumn{2}{c|}{Complete measurement} & \multicolumn{2}{|c|}{Incomplete measurement} \\ \hline
-     	Depth($\xi$) &  Location($\lambda$)   &  Noise free   &         5\% Noise         &  Noise free   &          5\% Noise           \\ \hline
-0.067     &          0.5           & 0.501(0.2\%)  &       0.503(0.6\%)        & 0.501(0.2\%)  &        0.496(-0.8\%)         \\
-0.50     &          0.5           & 0.498(-0.4\%) &       0.506(1.2\%)        & 0.498(-0.4\%) &         0.508(1.6\%)         \\ \hline
-\end{tabular}
-\label{tab:frmcl}
-\end{table}\\
 
-Figures must be drawn at the appropriate places and must be referred in the same page in the text. Figures should be referred in the text as Figure \ref{fig:beam}. 
-\begin{figure}[htpb]
-\centering
-\includegraphics[scale=0.5]{beam_engine.pdf}
-\caption{\bf Beam engine}
-\label{fig:beam}
-\end{figure}
 Title of figures must be center aligned and should be displayed at the bottom of the figure as shown. \\
 
-\begin{figure}[htpb]
-\centering
-\subfigure[Elliptical trammel]{
-\includegraphics[scale=0.75]{ellipse.jpg}
-\label{fig:ellipse}} \hspace{10mm}
-\subfigure[Scotch Yoke]{
-\includegraphics[scale=0.75]{scotch.jpg}
-\label{fig:scotch}}
-\caption{\bf Inversions of double slider crank chain}
-\label{fig:4s}
-\end{figure}
 Multiple figures with same caption can be arranged as shown in Figure \ref{fig:4s} and they are referred in text such as Figure \ref{fig:ellipse} and Figure \ref{fig:scotch}. The graphs should be drawn at appropriate places with center alignment and it should be referred in text. \\
 \begin{figure}[htpb]
 \centering
