@@ -490,6 +490,58 @@ In this section, we're going to discuss about the other non-functional requireme
 Other than a smartphone and an internet connection, nothing will be required to run this application with the highest performance.
 \subsection{Security Requirement}
 The app automatically encrypts the password of the user and hence the passwords are kept safe. In case the user forgets his/ her password, extra steps will be taken to make sure that the user is identified first. And hence, security is taken care of.
+\chapter{System Design}
+\section{Introduction}
+This chapter gives detailed information about the system design of the project, system design includes the requirements of the system, the entire flow of the process of the system. Understanding the design of the system helps in the better implementation of the system. This chapter includes the system architecture, in the system architecture the relationship and the process flow among the components is given. The data flow diagram gives the detailed process flow between the various modules of the system; a module is a separate unit of software or hardware. Typical characteristics of modular components include portability, which allows them to be used in a variety of systems, and interoperability, which allows them to function with the components of other systems. The  software and hardware requirements includes all data, functional and behavioral requirements of the software under production or development it also includes the hardware specifications required by the project. The software and hardware requirements of the system help in analyzing the basic architecture of the system. 
+
+The architecture diagram for the project android application for different levels of college management gives the basic process flow between the android and the web portal and some of the modules. The data flow diagram includes the process between the modules like login page, time table display page etc.
+\section{System Architecture}
+The architecture of a system is a model to describe or analyze a system. The system architecture basically consists various structures present in them and the relationship between them. The design and architecture of the system can be represented and modeled using an architecture diagram and the data flow diagram. The architecture diagram will consist of  basic components and modules. The data flow diagram describes about every module and the process flow, the pictorial representation of these helps in analyzing the design of the system.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{arch}
+	\caption{System Architecture}
+	\label{fig:arch}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{dataflow}
+	\caption{DataFlow Diagram}
+	\label{fig:data}
+\end{figure}
+\section{Description}
+The architecture diagram includes the main components the android application, database and the web portal. The diagram shows that the database is the back end of the system, it connects the android application and the web portal, the data updated through the web portal is retrieved by the database and accessed by the android application. 
+The dean login, the HOD login and the admin login are the main modules of the system. Through a secure login the user will be able to access the functionalities of these modules. 
+
+In the data flow diagram the various modules and the process flow between these modules is comprehensibly described.
+The symbols used in the data flow diagram are described in the below figure:
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{desc}
+	\caption{Symbold used in the DataFlow Diagram}
+	\label{fig:sym}
+\end{figure}
+The data flow diagram shows the step by step process of the android application. First there will be a login page to take the input login of the user, once the user enters the login information the data will be retrieved by the database and acted upon. The next functional page depending on the login will be shown, if it is a HOD login options like time table, available staff, staff time tables and responsibilities, location of the classes will be given, the user has to choose one and the given input will be retrieved by the database and the respective information like displaying the location of the class which has been entered, displaying the information about available staff etc. can be accessed or viewed. If it is a dean login options like HOD or staff will be given, once the input is received by the database the next respective module like displaying the details of the HOD of a particular department, contacting a HOD, checking for staff etc. will be accessed.
+\section{System Requirements}
+\subsection{Software specifications}
+The software specifications required to build the software of the system are:\\
+Android Studio\\
+Django framework\\
+python\\
+JDK\\
+web browser\\
+GIT \\
+\subsection{Hardware specifications}
+The hardware specifications required by the system are:\\
+Dual-core 64-bit processor\\
+8 GB of memory\\
+Up to 24 GB of internal storage\\
+4-4 GB RAM\\
+Hard disk capacity 40GB\\
+\section{Summary}
+Thus the system design has been analyzed and a detailed description about the design of this system has been given in this chapter. The analysis of the design of the system gives the detailed overview about the project, in this chapter detailed description of each and every module is given which briefs the user about the various features and advantages of the project. This chapter has also given information about the available features and options in the project. The requirements of the system also have been given for the better understanding of the technology used in the project.
+
+
 \chapter{Module Description}
 \section{Introduction}
 In this section, we're going to talk about the various modules in this project. We have divided the whole project into many sub sections and the three main modules of the project will be discussed below. Apart from discussing about it, the work flow diagram of each module is going to be provided to provide a clear idea of what the module is going to be and in-turn how the whole project is going to be.
@@ -883,12 +935,12 @@ for improving the overall efficiency in a college/university.
 The proposed mobile application portability and ease in use
 increases its credibility compared to other state-of-art methods.
 \chapter{Future Enhancement}
-
+We plan to add another log-in for students where they can share documents related to subjects and also view their marks, attendance and all relevant information. This is only currently being implemented for our college. In the future, we plan to take it to various other colleges and institutions
 
 % Bibliography.
 
 \begin{singlespace}
-\bibliography{thesis_refer} % Enter your .bib file name here
+\bibliography{biblo} % Enter your .bib file name here
 \end{singlespace}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
