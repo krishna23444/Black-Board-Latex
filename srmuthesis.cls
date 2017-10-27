@@ -340,7 +340,7 @@ a4paper,left=1.5in,right=1in,top=1in,bottom=1in,
          \MakeUppercase{#1}\par\nobreak      
        \end{center}
        \vskip 20\p@
-       \thispagestyle{empty}
+
      }}
 
    % Makes the chapter heading for \chapter* commands
@@ -383,6 +383,7 @@ a4paper,left=1.5in,right=1in,top=1in,bottom=1in,
    \renewcommand{\chaptername}{CHAPTER}
    \renewcommand\bibname{\centering REFERENCES}
    \renewcommand\appendixname{APPENDIX}
+   \renewcommand\@dotsep{200}
 \fi
 
 
