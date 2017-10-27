@@ -25,6 +25,7 @@
 \usepackage{appendix} 
 \usepackage{listings}
 \usepackage{graphicx}
+\usepackage{indentfirst}
 \usepackage[section]{placeins}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{shapes,arrows,shadows,patterns}
@@ -201,7 +202,10 @@ his valuable guidance, consistent encouragement, personal caring, timely help an
 
 %\acro{acronym}{in detail}
 \acro{API}{Application program interface}
-
+\acro{HOD}{Head of department}
+\acro{JSON}{Java Script Object Notation}
+\acro{JVM}{Java Virtual Machine}
+\acro{SQL}{Standardized Query Language}
 \end{acronym}
 % Use the syntax \ac{acronym} whereever you use this acronym.
 % Abbreviations
@@ -284,12 +288,16 @@ This chapter the complete information about the system design and the various mo
 
 \subsection*{Chapter 5}
 This chapter deals with entire implementation of the system. The information about the platform of the project is given, the sample coding and the screen shots of the working model with proper description is given this chapter. The project will be done and the summary will be given.
-
 \subsection*{Chapter 6}
-The conclusion of the project will be given in this chapter. The project also gives an insight
-about the future work which can be implemented through the project.
+The system implementation of the project will be given in this chapter. The project also gives an insight
+about the implementation details,technologies used.
+\subsection*{Chapter 7}
+The conclusion of the project will be given in this chapter.
+\subsection*{Chapter 8}
+The project also gives an insight about the future work which can be implemented through the project.
 \chapter{Literature Survey}
 \section{Introduction}
+In this section we're going to talk about the various papers we have looked at which are related to our project.
 \section{Existing System}
 %TODO Autocite References Using BibLaTex
 As mentioned in the paper 'Web Based Faculty Information Management System' by
@@ -394,7 +402,7 @@ The various feature in our application and web interface will include the follow
 \item Academic information of all the students can be found under the separate class teacher's login.
 \item The dean can access the contact information of every teacher on the campus.
 \item The dean can call any teacher he wishes to from the application itself.
-\item The HOD of each department can view the performance of students of his/ her department.
+\item The \ac{HOD} of each department can view the performance of students of his/ her department.
 \item Free periods of teachers can be seen through the application which will help in allocating them to classes where teachers are absent.
 \end{itemize}
 \subsection{User classes and characteristics}
@@ -530,17 +538,16 @@ Django framework\\
 python\\
 JDK\\
 web browser\\
-GIT \\
+GIT 
 \subsection{Hardware specifications}
 The hardware specifications required by the system are:\\
 Dual-core 64-bit processor\\
 8 GB of memory\\
 Up to 24 GB of internal storage\\
 4-4 GB RAM\\
-Hard disk capacity 40GB\\
+Hard disk capacity 40GB
 \section{Summary}
 Thus the system design has been analyzed and a detailed description about the design of this system has been given in this chapter. The analysis of the design of the system gives the detailed overview about the project, in this chapter detailed description of each and every module is given which briefs the user about the various features and advantages of the project. This chapter has also given information about the available features and options in the project. The requirements of the system also have been given for the better understanding of the technology used in the project.
-
 
 \chapter{Module Description}
 \section{Introduction}
@@ -591,7 +598,7 @@ As has been shown above, the project has been divided into 3 major modules and t
 \subsection{Java}
 The Java language is a key pillar in Android, an open source mobile operating system. Although Android, built on the Linux kernel, is written largely in C, the Android SDK uses the Java language as the basis for Android applications.
 
-Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. 
+Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (\ac{JVM}) regardless of computer architecture. 
 \subsection{Kotlin}
 Kotlin is a Concise, Simple,Safe and Statically typed programming language focused on Interoperability with Java. 
 
@@ -607,8 +614,8 @@ Git is a version control system for tracking changes in computer files and coord
 Representational state transfer (REST) or RESTful web services is a way of providing interoperability between computer systems on the Internet. REST-compliant Web services allow requesting systems to access and manipulate textual representations of Web resources using a uniform and predefined set of stateless operations.
 
 An \ac{API} for a website is code that allows two software programs to communicate with each another.A RESTful \ac{API} explicitly takes advantage of HTTP methodologies. They use GET to retrieve a resource; PUT to change the state of or update a resource, which can be an object, file or block; POST to create that resource; and DELETE to remove it.
-\subsection{JSON}
-JavaScript Object Notation or JSON is an open-standard file format that uses human-readable text to transmit data objects consisting of attribute-value pairs and array data types (or any other serializable value). It is a very common data format used for asynchronous browser-server communication.
+\subsection{\ac{JSON}}
+JavaScript Object Notation or \ac{JSON} is an open-standard file format that uses human-readable text to transmit data objects consisting of attribute-value pairs and array data types (or any other serializable value). It is a very common data format used for asynchronous browser-server communication.
 
 JSON is built on two structures:
 A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
@@ -622,9 +629,9 @@ The Official IDE for Android. Android Studio provides the fastest tools for buil
 
 World-class code editing, debugging, performance tooling, a flexible build system, and an instant build/deploy system all allow you to focus on building unique and high quality apps.
 \subsection{SQLite}
-SQLite is an in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. The code for SQLite is in the public domain and is thus free for use for any purpose, commercial or private.
+SQLite is an in-process library that implements a self-contained, serverless, zero-configuration, transactional \ac{SQL} database engine. The code for SQLite is in the public domain and is thus free for use for any purpose, commercial or private.
 
-SQLite is an embedded SQL database engine. Unlike most other SQL databases, SQLite does not have a separate server process.SQLite is a compact library. With all features enabled, the library size can be less than 500KiB. SQLite a popular database engine choice on memory constrained gadgets such as cellphones, PDAs, and MP3 players. Performance is usually quite good even in low-memory environments.
+SQLite is an embedded \ac{SQL} database engine. Unlike most other \ac{SQL} databases, SQLite does not have a separate server process.SQLite is a compact library. With all features enabled, the library size can be less than 500KiB. SQLite a popular database engine choice on memory constrained gadgets such as cellphones, PDAs, and MP3 players. Performance is usually quite good even in low-memory environments.
 
 \subsection{Open Source Libraries for Android}
 \paragraph{Glide}
@@ -867,7 +874,7 @@ All information related to the particular person
 available in one application. Faculty can check his/her timetable, class location, class timetable with the click of a button.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{facultydashboard}
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{dashboard}
 \caption{Faculty Dashboard}
 \label{fig:faculty-dashboard}
 \end{figure} 
@@ -919,6 +926,24 @@ Dashboard for the admin Webportal where database can be modified/updated/added/d
 	\caption{BlackBoard Admin Dashboard}
 	\label{fig:django-dash}
 \end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{addclass}
+	\caption{BlackBoard Admin- Add Class}
+	\label{fig:django-dash}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{addfaculty}
+	\caption{BlackBoard Admin-Add Faculty}
+	\label{fig:django-dash}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth, height=7cm,keepaspectratio]{facultylist}
+	\caption{BlackBoard Admin-faculty list}
+	\label{fig:django-dash}
+\end{figure}
 \section{Summary}
 The mobile application, incorporating the college
 management system, is a very effective tool
@@ -927,18 +952,18 @@ which can be used for improving the overall efficiency in a college/university.D
 The Application was tested on an emulator which lets you prototype, develop and test Android applications without using a physical device. The application performed extremely well in low resource environments where the storage space and network connection is slow. Memory leaks were detected and resolved during development using Leak Canary, Proguard has been used to optimize the code(remove unused resources) and also to obfuscate the core logic for security.
 
 
-\chapter{Conclusion}
+\chapter{Conclusion and future enhancement}
+\section{Conclusion}
 The mobile application, incorporating the college manage-
 ment system, is a very effective tool which can be used
 
 for improving the overall efficiency in a college/university.
 The proposed mobile application portability and ease in use
 increases its credibility compared to other state-of-art methods.
-\chapter{Future Enhancement}
+\section{Future Enhancement}
 We plan to add another log-in for students where they can share documents related to subjects and also view their marks, attendance and all relevant information. This is only currently being implemented for our college. In the future, we plan to take it to various other colleges and institutions
 
 % Bibliography.
-
 \begin{singlespace}
 \bibliography{biblo} % Enter your .bib file name here
 \end{singlespace}
